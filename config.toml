@@ -1,7 +1,9 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Bear's Dev Blog"
+Title = "Bear's Dev Blog"
 theme = "terminal"
 [params]
 	fullwidththeme = true
 	centertheme = true
+[params.logo]
+	logoText = "bear's dev blog"
