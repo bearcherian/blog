@@ -28,13 +28,13 @@
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>/tags/</loc>
     <lastmod>2017-08-09T11:19:48-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>/categories/</loc>
     <lastmod>2017-08-09T11:19:48-04:00</lastmod>
     <priority>0</priority>
   </url>
