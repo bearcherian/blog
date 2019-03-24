@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>The Vulnerable External Component :: Bear&#39;s Dev Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="*Update (2014.11.24): The post below references an issue with a Component in CQ 5.5. I finally heard back from Adobe support and the issue has been resolved in CQ 5.6.1 by removing the Adaptive feature. They provided this forum post as a reference.*
+Recently I was perusing crawl errors from Google&amp;rsquo;s Webmaster Tools to find any issues that had not yet been reported. I came across dozens of 500 errors coming from requests to one particular page."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/the-vulnerable-external-component/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="assets/%25!s%28%3cnil%3e%29.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="img/favicon/%25!s%28%3cnil%3e%29.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="The Vulnerable External Component :: Bear&#39;s Dev Blog — " />
+<meta name="twitter:description" content="*Update (2014.11.24): The post below references an issue with a Component in CQ 5.5. I finally heard back from Adobe support and the issue has been resolved in CQ 5.6.1 by removing the Adaptive feature. They provided this forum post as a reference.*
+Recently I was perusing crawl errors from Google&amp;rsquo;s Webmaster Tools to find any issues that had not yet been reported. I came across dozens of 500 errors coming from requests to one particular page." />
+<meta name="twitter:site" content="/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The Vulnerable External Component :: Bear&#39;s Dev Blog — ">
+<meta property="og:description" content="*Update (2014.11.24): The post below references an issue with a Component in CQ 5.5. I finally heard back from Adobe support and the issue has been resolved in CQ 5.6.1 by removing the Adaptive feature. They provided this forum post as a reference.*
+Recently I was perusing crawl errors from Google&amp;rsquo;s Webmaster Tools to find any issues that had not yet been reported. I came across dozens of 500 errors coming from requests to one particular page." />
+<meta property="og:url" content="/posts/the-vulnerable-external-component/" />
+<meta property="og:site_name" content="The Vulnerable External Component" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2014-11-12 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    bear&#39;s dev blog
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+  <div class="post">
+    <h1 class="post-title"><a href="/posts/the-vulnerable-external-component/">The Vulnerable External Component</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2014-11-12
+      </span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/cq/">CQ</a>&nbsp;
+        
+          #<a href="/tags/external/">external</a>&nbsp;
+        
+          #<a href="/tags/iframe/">iframe</a>&nbsp;
+        
+          #<a href="/tags/security/">security</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      
+
+<p>*<strong>Update (2014.11.24):</strong> The post below references an issue with a Component in CQ 5.5. I finally heard back from Adobe support and the issue has been resolved in CQ 5.6.1 by removing the Adaptive feature. They provided <a href="http://help-forums.adobe.com/content/adobeforums/en/experience-manager-forum/adobe-experience-manager.topic.312.html/forum__75v9-hi_in_cq_5_5the.html">this forum post</a> as a reference.*</p>
+
+<p>Recently I was perusing crawl errors from <a href="https://www.google.com/webmasters/tools/">Google&rsquo;s Webmaster Tools</a> to find any issues that had not yet been reported. I came across dozens of 500 errors coming from requests to one particular page. When I went to view the page I saw our template mangled with content from an Arabic news site. What was going on?!</p>
+
+<p>The page itself, without any parameters, was simply a templated page with an external component loading a basic HTML form hosted on another server. Each 500-error request had a query parameter of <code>CFC__target</code>, which was set to a URL on an Arabic news site. So a page at <code>path/to/page.html</code> appeared as <code>path/to/page.html?CFC__target=http://www.somesite.com</code>. If you&rsquo;re trying this out on your CQ environment, note the double underscore.</p>
+
+<p>I replaced the news site link with a link of my own. Lo&rsquo; and behold, now my link loaded up, mangling the content of the original page. I edited the page and changed the mode from Adaptive to Fixed and tried using the <code>CFC__target</code> again. This time the page wasn&rsquo;t mangled, but the content of the URL in the <code>CFC__target</code> parameter loaded up in the iframe.</p>
+
+<h3 id="understanding-the-external-component">Understanding the External Component</h3>
+
+<p>The External component has very little code in the JSPs. It totals about 15 lines of code across two JSPs, not including dialog, comments, and imports. Most of the work is done by <a href="http://docs.adobe.com/docs/en/cq/current/javadoc/com/day/cq/wcm/foundation/External.html">com.day.cq.wcm.foundation.External</a>.</p>
+
+<p>In the dialog, the External component has two Inclusion mode options: &ldquo;Fixed&rdquo; and &ldquo;Adaptive&rdquo;. In &ldquo;Fixed&rdquo; mode, the target URL is placed into an iframe. Simple and easy. This is not always ideal because the layout and style of the remote content does not fit well in an iframe.</p>
+
+<p>In &ldquo;Adaptive&rdquo; mode, the HTML of the target is placed on the page itself, and all of the links are rewritten to be relative paths. This way the content fits in nicely on the page, you don&rsquo;t have to guess on the height of the content, and you don&rsquo;t have to worry about CORS issues.</p>
+
+<p>The problem is how the adaptive mode work is done. Each link is rewritten to point to the page itself using a query parameter to read in the resource from the remote site. So if the page at the target URL includes a JavaScript file at <code>http://www.somesite.com/js/main.js</code>, it is rewritten as <code>path/to/page/jcr:content/par/external.spool?CFC__target=http://www.somesite.com/js/main.js</code>.</p>
+
+<h3 id="what-s-the-risk">What&rsquo;s the risk?</h3>
+
+<p>There doesn&rsquo;t seem to be a risk here to the server, at least not one that I could identify off the bat. The main risk here is to your end users.</p>
+
+<p>Knowing how the External Component works, hackers, phishers, and scammers now have a way to mimic your organizations site. Just create a fake logon page, add it as a parameter via <code>CFC__target</code>, and they now have a legitimate looking logon page with a legitimate looking URL that can be emailed out to phish usernames and passwords.</p>
+
+<h3 id="how-do-you-fix-it">How do you fix it?</h3>
+
+<p>There are a few options to fix this.</p>
+
+<ol>
+<li><strong>Remove the code that uses CFC__Target.</strong> This requires simply commenting out the lines that read in the request parameter and sets the external object&rsquo;s target. The drawback is it effectively breaks the Adaptive mode because the rewritten links no longer function correctly.</li>
+<li><strong>Change the parameter name.</strong> This is probably the least effective. If removed the fact that the parameter <code>CFC__target</code> can be used, but the new target parameter name is exposed by any resources referenced from the target URL.</li>
+<li><strong>Fix the External Class.</strong> This would be really nice, but since it is proprietary Adobe code, it&rsquo;s up to Adobe to fix this. I&rsquo;ve opened a ticket with Adobe support on this and am waiting for a response.</li>
+<li><strong>Disable the External Component.</strong> Seems a bit drastic, but it might be the best choice for you. For us, at this point, this isn&rsquo;t an option since we have hundred of pages that currently use this component. If you do decide to go this route, you will probably want to write your own component for loading content via iframe. But then that would be the same as option 1.</li>
+</ol>
+
+<p>Whatever option you choose, it&rsquo;s important to address this on your CQ instance to avoid your site being used to carry out malicious attacks.</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/aem-responsive-grid-with-0px-height/">
+                <span class="button__icon">←</span>
+                <span class="button__text">AEM Responsive Grid with 0px height</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/smart-alt-field-validation/">
+                <span class="button__text">Smart ALT field validation</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

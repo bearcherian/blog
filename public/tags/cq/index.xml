@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cq on Bear&#39;s Dev Blog</title>
+    <link>/tags/cq/</link>
+    <description>Recent content in Cq on Bear&#39;s Dev Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 12 Nov 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/cq/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Vulnerable External Component</title>
+      <link>/posts/the-vulnerable-external-component/</link>
+      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/the-vulnerable-external-component/</guid>
+      <description>*Update (2014.11.24): The post below references an issue with a Component in CQ 5.5. I finally heard back from Adobe support and the issue has been resolved in CQ 5.6.1 by removing the Adaptive feature. They provided this forum post as a reference.*
+Recently I was perusing crawl errors from Google&amp;rsquo;s Webmaster Tools to find any issues that had not yet been reported. I came across dozens of 500 errors coming from requests to one particular page.</description>
+    </item>
+    
+    <item>
+      <title>Smart ALT field validation</title>
+      <link>/posts/smart-alt-field-validation/</link>
+      <pubDate>Wed, 18 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/smart-alt-field-validation/</guid>
+      <description>We had a requirement to enforce alt attributes on images. Sounds simple, just set the alt field to required. The problem is when you do that for components that use images, like Text &amp;amp; Image. If a user decides to enter text, but not use the image portion the ALT text is still required, and the alert for a missing field still appears.
+To fix this we add a function to the &amp;lsquo;validator&amp;rsquo; property of the ALT Text field using CQs ExtJS.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ada Compliance on Bear&#39;s Dev Blog</title>
+    <link>/tags/ada-compliance/</link>
+    <description>Recent content in Ada Compliance on Bear&#39;s Dev Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 18 Jun 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/ada-compliance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Smart ALT field validation</title>
+      <link>/posts/smart-alt-field-validation/</link>
+      <pubDate>Wed, 18 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/smart-alt-field-validation/</guid>
+      <description>We had a requirement to enforce alt attributes on images. Sounds simple, just set the alt field to required. The problem is when you do that for components that use images, like Text &amp;amp; Image. If a user decides to enter text, but not use the image portion the ALT text is still required, and the alert for a missing field still appears.
+To fix this we add a function to the &amp;lsquo;validator&amp;rsquo; property of the ALT Text field using CQs ExtJS.</description>
+    </item>
+    
+  </channel>
+</rss>

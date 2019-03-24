@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Git Users and Their Last Commits :: Bear&#39;s Dev Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="I needed to remember who was working with me on a certain project over the last year. I had some trouble remembering, because this last year has been crazy personally, and the project overlapped a couple years. All the years and months and days were running together in my brain.
+Fortunately, we have git logs, but it&amp;rsquo;s not straightforward. I came up with this set of commands to help with the task:"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/git-users-and-their-last-commits/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="assets/%25!s%28%3cnil%3e%29.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="img/favicon/%25!s%28%3cnil%3e%29.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Git Users and Their Last Commits :: Bear&#39;s Dev Blog — " />
+<meta name="twitter:description" content="I needed to remember who was working with me on a certain project over the last year. I had some trouble remembering, because this last year has been crazy personally, and the project overlapped a couple years. All the years and months and days were running together in my brain.
+Fortunately, we have git logs, but it&amp;rsquo;s not straightforward. I came up with this set of commands to help with the task:" />
+<meta name="twitter:site" content="/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Git Users and Their Last Commits :: Bear&#39;s Dev Blog — ">
+<meta property="og:description" content="I needed to remember who was working with me on a certain project over the last year. I had some trouble remembering, because this last year has been crazy personally, and the project overlapped a couple years. All the years and months and days were running together in my brain.
+Fortunately, we have git logs, but it&amp;rsquo;s not straightforward. I came up with this set of commands to help with the task:" />
+<meta property="og:url" content="/posts/git-users-and-their-last-commits/" />
+<meta property="og:site_name" content="Git Users and Their Last Commits" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-03-19 12:19:25 -0400 EDT" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    bear&#39;s dev blog
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+  <div class="post">
+    <h1 class="post-title"><a href="/posts/git-users-and-their-last-commits/">Git Users and Their Last Commits</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2019-03-19
+      </span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/git/">git</a>&nbsp;
+        
+          #<a href="/tags/logs/">logs</a>&nbsp;
+        
+          #<a href="/tags/bash/">bash</a>&nbsp;
+        
+          #<a href="/tags/linux/">linux</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>I needed to remember who was working with me on a certain project over the last year. I had some trouble remembering, because this last year has been crazy personally, and the project overlapped a couple years. All the years and months and days were running together in my brain.</p>
+
+<p>Fortunately, we have git logs, but it&rsquo;s not straightforward. I came up with this set of commands to help with the task:</p>
+
+<pre><code>git log --pretty=format:&quot;%an&quot; | \
+    sort | \
+    uniq | \
+    awk '{system(&quot;git log -1 --author=&quot;$1 &quot; --pretty=format:\&quot;%ad%x09%an\&quot;&quot;); print &quot;\r&quot;}' | \
+    sort -k5n -k2M -k3n
+</code></pre>
+
+<p>Here&rsquo;s what we&rsquo;re doing:
+1. get all of the user names in the git logs
+2. sort them lexically
+3. remove repeats (sort -u could have replaced these)
+4. do another git log for each user, but print out their last commit, and format it to be just the date and their name separated by a tab.
+5. Sort by the columns (year, month, date)</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+          
+            <span class="button next">
+              <a href="/posts/aem-responsive-grid-with-0px-height/">
+                <span class="button__text">AEM Responsive Grid with 0px height</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

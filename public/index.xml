@@ -6,19 +6,58 @@
     <description>Recent content on Bear&#39;s Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Mar 2019 11:55:08 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 19 Mar 2019 12:19:25 -0400</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hellllooooo</title>
-      <link>/posts/hellllooooo/</link>
-      <pubDate>Sat, 23 Mar 2019 11:55:08 -0400</pubDate>
+      <title>Git Users and Their Last Commits</title>
+      <link>/posts/git-users-and-their-last-commits/</link>
+      <pubDate>Tue, 19 Mar 2019 12:19:25 -0400</pubDate>
       
-      <guid>/posts/hellllooooo/</guid>
-      <description>#HELLLLOOOO!!
-k, bye</description>
+      <guid>/posts/git-users-and-their-last-commits/</guid>
+      <description>I needed to remember who was working with me on a certain project over the last year. I had some trouble remembering, because this last year has been crazy personally, and the project overlapped a couple years. All the years and months and days were running together in my brain.
+Fortunately, we have git logs, but it&amp;rsquo;s not straightforward. I came up with this set of commands to help with the task:</description>
+    </item>
+    
+    <item>
+      <title>AEM Responsive Grid with 0px height</title>
+      <link>/posts/aem-responsive-grid-with-0px-height/</link>
+      <pubDate>Tue, 15 Jan 2019 07:19:25 -0400</pubDate>
+      
+      <guid>/posts/aem-responsive-grid-with-0px-height/</guid>
+      <description>In AEM when you create a new page component with a editable area that uses the responsive grid (wcm/foundation/components/responsivegrid) you might experience an issue where the editable area appears, but has no height, and is unusable. All you get is a thin blue line where the editable area should be.
+The cause of this is a missing include. To initialize the AEM editing features, an JSP is loaded that initializes all of the editable areas, as well as some other things.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Wed, 09 Aug 2017 11:19:48 -0400</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Hi 🐻</description>
+    </item>
+    
+    <item>
+      <title>The Vulnerable External Component</title>
+      <link>/posts/the-vulnerable-external-component/</link>
+      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/the-vulnerable-external-component/</guid>
+      <description>*Update (2014.11.24): The post below references an issue with a Component in CQ 5.5. I finally heard back from Adobe support and the issue has been resolved in CQ 5.6.1 by removing the Adaptive feature. They provided this forum post as a reference.*
+Recently I was perusing crawl errors from Google&amp;rsquo;s Webmaster Tools to find any issues that had not yet been reported. I came across dozens of 500 errors coming from requests to one particular page.</description>
+    </item>
+    
+    <item>
+      <title>Smart ALT field validation</title>
+      <link>/posts/smart-alt-field-validation/</link>
+      <pubDate>Wed, 18 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/smart-alt-field-validation/</guid>
+      <description>We had a requirement to enforce alt attributes on images. Sounds simple, just set the alt field to required. The problem is when you do that for components that use images, like Text &amp;amp; Image. If a user decides to enter text, but not use the image portion the ALT text is still required, and the alert for a missing field still appears.
+To fix this we add a function to the &amp;lsquo;validator&amp;rsquo; property of the ALT Text field using CQs ExtJS.</description>
     </item>
     
   </channel>

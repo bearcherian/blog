@@ -6,9 +6,154 @@
     <description>Recent content in Tags on Bear&#39;s Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 09 Aug 2017 11:19:48 -0400</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>/tags/</link>
+      <pubDate>Wed, 09 Aug 2017 11:19:48 -0400</pubDate>
+      
+      <guid>/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Acessibility</title>
+      <link>/tags/acessibility/</link>
+      <pubDate>Wed, 18 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/acessibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ada Compliance</title>
+      <link>/tags/ada-compliance/</link>
+      <pubDate>Wed, 18 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ada-compliance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aem</title>
+      <link>/tags/aem/</link>
+      <pubDate>Tue, 15 Jan 2019 07:19:25 -0400</pubDate>
+      
+      <guid>/tags/aem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>/tags/bash/</link>
+      <pubDate>Tue, 19 Mar 2019 12:19:25 -0400</pubDate>
+      
+      <guid>/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cq</title>
+      <link>/tags/cq/</link>
+      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/cq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experience Manager</title>
+      <link>/tags/experience-manager/</link>
+      <pubDate>Tue, 15 Jan 2019 07:19:25 -0400</pubDate>
+      
+      <guid>/tags/experience-manager/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>External</title>
+      <link>/tags/external/</link>
+      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/external/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>/tags/git/</link>
+      <pubDate>Tue, 19 Mar 2019 12:19:25 -0400</pubDate>
+      
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Htl</title>
+      <link>/tags/htl/</link>
+      <pubDate>Tue, 15 Jan 2019 07:19:25 -0400</pubDate>
+      
+      <guid>/tags/htl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iframe</title>
+      <link>/tags/iframe/</link>
+      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/iframe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Images</title>
+      <link>/tags/images/</link>
+      <pubDate>Wed, 18 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/images/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Tue, 19 Mar 2019 12:19:25 -0400</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logs</title>
+      <link>/tags/logs/</link>
+      <pubDate>Tue, 19 Mar 2019 12:19:25 -0400</pubDate>
+      
+      <guid>/tags/logs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>/tags/security/</link>
+      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sightly</title>
+      <link>/tags/sightly/</link>
+      <pubDate>Tue, 15 Jan 2019 07:19:25 -0400</pubDate>
+      
+      <guid>/tags/sightly/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

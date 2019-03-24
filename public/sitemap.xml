@@ -3,29 +3,153 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/hellllooooo/</loc>
-    <lastmod>2019-03-23T11:55:08-04:00</lastmod>
+    <loc>/posts/git-users-and-their-last-commits/</loc>
+    <lastmod>2019-03-19T12:19:25-04:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2019-03-23T11:55:08-04:00</lastmod>
-    <priority>0</priority>
+    <loc>/posts/aem-responsive-grid-with-0px-height/</loc>
+    <lastmod>2019-01-15T07:19:25-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2017-08-09T11:19:48-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/the-vulnerable-external-component/</loc>
+    <lastmod>2014-11-12T12:52:43-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/smart-alt-field-validation/</loc>
+    <lastmod>2014-06-18T09:20:44-04:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/posts/</loc>
-    <lastmod>2019-03-23T11:55:08-04:00</lastmod>
+    <lastmod>2017-08-09T11:19:48-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
+    <lastmod>2017-08-09T11:19:48-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/acessibility/</loc>
+    <lastmod>2014-06-18T09:20:44-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ada-compliance/</loc>
+    <lastmod>2014-06-18T09:20:44-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/aem/</loc>
+    <lastmod>2019-01-15T07:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/bash/</loc>
+    <lastmod>2019-03-19T12:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2019-03-19T12:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <lastmod>2017-08-09T11:19:48-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cq/</loc>
+    <lastmod>2014-11-12T12:52:43-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/experience-manager/</loc>
+    <lastmod>2019-01-15T07:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/external/</loc>
+    <lastmod>2014-11-12T12:52:43-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/git/</loc>
+    <lastmod>2019-03-19T12:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/htl/</loc>
+    <lastmod>2019-01-15T07:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/iframe/</loc>
+    <lastmod>2014-11-12T12:52:43-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/images/</loc>
+    <lastmod>2014-06-18T09:20:44-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/linux/</loc>
+    <lastmod>2019-03-19T12:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/logs/</loc>
+    <lastmod>2019-03-19T12:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/</loc>
+    <lastmod>2019-03-19T12:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/security/</loc>
+    <lastmod>2014-11-12T12:52:43-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sightly/</loc>
+    <lastmod>2019-01-15T07:19:25-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2017-08-09T11:19:48-04:00</lastmod>
     <priority>0</priority>
   </url>
   

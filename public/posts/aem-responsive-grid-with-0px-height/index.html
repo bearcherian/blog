@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>AEM Responsive Grid with 0px height :: Bear&#39;s Dev Blog</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="description" content="In AEM when you create a new page component with a editable area that uses the responsive grid (wcm/foundation/components/responsivegrid) you might experience an issue where the editable area appears, but has no height, and is unusable. All you get is a thin blue line where the editable area should be.
+The cause of this is a missing include. To initialize the AEM editing features, an JSP is loaded that initializes all of the editable areas, as well as some other things."/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/posts/aem-responsive-grid-with-0px-height/" />
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+  <link rel="stylesheet" href="assets/%25!s%28%3cnil%3e%29.css">
+
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+
+<link rel="shortcut icon" href="img/favicon/%25!s%28%3cnil%3e%29.png">
+
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="AEM Responsive Grid with 0px height :: Bear&#39;s Dev Blog — " />
+<meta name="twitter:description" content="In AEM when you create a new page component with a editable area that uses the responsive grid (wcm/foundation/components/responsivegrid) you might experience an issue where the editable area appears, but has no height, and is unusable. All you get is a thin blue line where the editable area should be.
+The cause of this is a missing include. To initialize the AEM editing features, an JSP is loaded that initializes all of the editable areas, as well as some other things." />
+<meta name="twitter:site" content="/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image" content="">
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="AEM Responsive Grid with 0px height :: Bear&#39;s Dev Blog — ">
+<meta property="og:description" content="In AEM when you create a new page component with a editable area that uses the responsive grid (wcm/foundation/components/responsivegrid) you might experience an issue where the editable area appears, but has no height, and is unusable. All you get is a thin blue line where the editable area should be.
+The cause of this is a missing include. To initialize the AEM editing features, an JSP is loaded that initializes all of the editable areas, as well as some other things." />
+<meta property="og:url" content="/posts/aem-responsive-grid-with-0px-height/" />
+<meta property="og:site_name" content="AEM Responsive Grid with 0px height" />
+<meta property="og:image" content="">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2019-01-15 07:19:25 -0400 -0400" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body class="">
+
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    bear&#39;s dev blog
+  </div>
+</a>
+
+    </div>
+    <div class="menu-trigger">menu</div>
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+  <div class="post">
+    <h1 class="post-title"><a href="/posts/aem-responsive-grid-with-0px-height/">AEM Responsive Grid with 0px height</a></h1>
+    <div class="post-meta">
+      <span class="post-date">
+        2019-01-15
+      </span>
+      
+    </div>
+
+    
+      <span class="post-tags">
+        
+          #<a href="/tags/aem/">aem</a>&nbsp;
+        
+          #<a href="/tags/experience-manager/">experience manager</a>&nbsp;
+        
+          #<a href="/tags/htl/">HTL</a>&nbsp;
+        
+          #<a href="/tags/sightly/">sightly</a>&nbsp;
+        
+      </span>
+    
+
+    
+
+    <div class="post-content">
+      <p>In AEM when you create a new page component with a editable area that uses the responsive grid (<code>wcm/foundation/components/responsivegrid</code>) you might experience an issue where the editable area appears, but has no height, and is unusable. All you get is a thin blue line where the editable area should be.</p>
+
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/fjyznpqt1kqgzexdvwe4.png" alt="Screenshot of unusable editable area" /></p>
+
+<p>The cause of this is a missing include. To initialize the AEM editing features, an JSP is loaded that initializes all of the editable areas, as well as some other things.</p>
+
+<p>The solution is to add the following in your <code>&lt;head&gt;</code> of your page component</p>
+
+<pre><code class="language-html">    &lt;!--/* Initializes the Experience Manager authoring UI */--&gt;
+    &lt;sly data-sly-include=&quot;/libs/wcm/core/components/init/init.jsp&quot; data-sly-unwrap/&gt;
+</code></pre>
+
+<p>You can remove the comment, but I like to leave it in so I, or anyone else editing the page component, knows why we have it in there. Now you&rsquo;ll see your editable area ready to add components.</p>
+
+<p><img src="https://thepracticaldev.s3.amazonaws.com/i/f0l4q5udxc8ueo4kqlr8.png" alt="Screenshot of working editable area" /></p>
+
+<p>Thanks to user manasip9 for posting <a href="https://forums.adobe.com/message/9942397#9942397">their answer on this thread</a>  on the Adobe forums.</p>
+
+    </div>
+    
+      <div class="pagination">
+        <div class="pagination__title">
+          <span class="pagination__title-h"></span>
+          <hr />
+        </div>
+        <div class="pagination__buttons">
+          
+            <span class="button previous">
+              <a href="/posts/git-users-and-their-last-commits/">
+                <span class="button__icon">←</span>
+                <span class="button__text">Git Users and Their Last Commits</span>
+              </a>
+            </span>
+          
+          
+            <span class="button next">
+              <a href="/posts/the-vulnerable-external-component/">
+                <span class="button__text">The Vulnerable External Component</span>
+                <span class="button__icon">→</span>
+              </a>
+            </span>
+          
+        </div>
+      </div>
+    
+
+    
+
+  </div>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2019 Powered by <a href="http://gohugo.io">Hugo</a></span>
+        <span>:: Theme made by <a href="https://twitter.com/panr">panr</a></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

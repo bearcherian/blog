@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Bear&#39;s Dev Blog</title>
-    <link>/posts/</link>
-    <description>Recent content in Posts on Bear&#39;s Dev Blog</description>
+    <title>Aem on Bear&#39;s Dev Blog</title>
+    <link>/tags/aem/</link>
+    <description>Recent content in Aem on Bear&#39;s Dev Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 Mar 2019 12:19:25 -0400</lastBuildDate>
+    <lastBuildDate>Tue, 15 Jan 2019 07:19:25 -0400</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/aem/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Git Users and Their Last Commits</title>
-      <link>/posts/git-users-and-their-last-commits/</link>
-      <pubDate>Tue, 19 Mar 2019 12:19:25 -0400</pubDate>
-      
-      <guid>/posts/git-users-and-their-last-commits/</guid>
-      <description>I needed to remember who was working with me on a certain project over the last year. I had some trouble remembering, because this last year has been crazy personally, and the project overlapped a couple years. All the years and months and days were running together in my brain.
-Fortunately, we have git logs, but it&amp;rsquo;s not straightforward. I came up with this set of commands to help with the task:</description>
-    </item>
     
     <item>
       <title>AEM Responsive Grid with 0px height</title>
@@ -29,16 +19,6 @@ Fortunately, we have git logs, but it&amp;rsquo;s not straightforward. I came up
       <guid>/posts/aem-responsive-grid-with-0px-height/</guid>
       <description>In AEM when you create a new page component with a editable area that uses the responsive grid (wcm/foundation/components/responsivegrid) you might experience an issue where the editable area appears, but has no height, and is unusable. All you get is a thin blue line where the editable area should be.
 The cause of this is a missing include. To initialize the AEM editing features, an JSP is loaded that initializes all of the editable areas, as well as some other things.</description>
-    </item>
-    
-    <item>
-      <title>The Vulnerable External Component</title>
-      <link>/posts/the-vulnerable-external-component/</link>
-      <pubDate>Wed, 12 Nov 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/the-vulnerable-external-component/</guid>
-      <description>*Update (2014.11.24): The post below references an issue with a Component in CQ 5.5. I finally heard back from Adobe support and the issue has been resolved in CQ 5.6.1 by removing the Adaptive feature. They provided this forum post as a reference.*
-Recently I was perusing crawl errors from Google&amp;rsquo;s Webmaster Tools to find any issues that had not yet been reported. I came across dozens of 500 errors coming from requests to one particular page.</description>
     </item>
     
     <item>
