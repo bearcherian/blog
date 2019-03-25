@@ -23,8 +23,9 @@ git log --pretty=format:"%an" | \
 ```
 
 Here's what we're doing:
+
 1. get all of the user names in the git logs
-2. sort them lexically
-3. remove repeats (sort -u could have replaced these)
-4. do another git log for each user, but print out their last commit, and format it to be just the date and their name separated by a tab. 
-5. Sort by the columns (year, month, date)
++ sort them lexically
++ remove repeats (sort -u could have replaced these)
++ do another git log for each user, but print out their last commit, and format it to be just the date and their name separated by a tab. 
++ Sort by the columns (year, month, date)
