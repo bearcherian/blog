@@ -7,7 +7,6 @@ tags:
 - go
 - beginners
 ---
-Check one two
 
 I was reading a bit about Go's builtin for `panic()` and `recover()`. I wanted to understand it a bit more, so I made a small app that tries to show how `defer`, `panic()`, and `recover()` all work together.
 
